@@ -5,3 +5,7 @@
 /node_modules/*
 /css/*.css
 css/
+
+js/site\.js
+
+js/site\.min\.js

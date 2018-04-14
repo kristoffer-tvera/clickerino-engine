@@ -30,6 +30,11 @@
                 "kind": "build",
                 "isDefault": true
             }
+        },
+        {
+            "type": "grunt",
+            "task": "js_compile",
+            "problemMatcher": []
         }
     ]
 }

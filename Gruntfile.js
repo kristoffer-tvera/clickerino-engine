@@ -73,6 +73,8 @@ module.exports = function (grunt) {
       dist: {
         // the files to concatenate
         src: [
+          "js/main.js",
+          "js/plugins.js",
           "js/partial/one.js",
           "js/partial/two.js",
         ],
@@ -128,6 +130,14 @@ module.exports = function (grunt) {
           interrupt: false,
           spawn: false,
         },
+      },
+      js: {
+        files: ['js/**/*'],
+        tasks: ['js_compile'],
+        options: {
+          interrupt: false,
+          spawn: false,
+        },
       }
     },
 
@@ -140,6 +150,7 @@ module.exports = function (grunt) {
       },
       monitor: {
         tasks: ["sass_compile", "watch:sass",
+          "js_compile", "watch:js",
           "notify:watching", 'server']
       },
     },
@@ -205,6 +216,7 @@ module.exports = function (grunt) {
     ]
   );
 
+  grunt.registerTask('js_compile', ['concat:dist', 'uglify:dist']);
   grunt.registerTask('sass_compile', ['sass:expanded', 'sass:min', 'notify:sass_compile']);
   grunt.registerTask('server', ['browserSync', 'notify:server']);
   grunt.registerTask('monitor', ["concurrent:monitor"]);
