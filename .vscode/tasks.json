@@ -1,0 +1,35 @@
+{
+    // See https://go.microsoft.com/fwlink/?LinkId=733558
+    // for the documentation about the tasks.json format
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "type": "grunt",
+            "task": "sass_compile",
+            "problemMatcher": []
+        },
+        {
+            "type": "grunt",
+            "task": "server",
+            "problemMatcher": []
+        },
+        {
+            "type": "grunt",
+            "task": "monitor",
+            "problemMatcher": []
+        },
+        {
+            "type": "grunt",
+            "task": "travis",
+            "problemMatcher": []
+        },
+        {
+            "type": "grunt",
+            "task": "release",
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            }
+        }
+    ]
+}
