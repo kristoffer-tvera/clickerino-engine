@@ -86,6 +86,8 @@ module.exports = function (grunt) {
           sourceMapStyle: 'link'
         },
         src: [
+          "js/main.js",
+          "js/plugins.js",
           "js/partial/one.js",
           "js/partial/two.js",
         ],
@@ -184,6 +186,7 @@ module.exports = function (grunt) {
   grunt.loadNpmTasks('grunt-sass');
   grunt.loadNpmTasks('grunt-contrib-concat');
   grunt.loadNpmTasks('grunt-contrib-uglify');
+  grunt.loadNpmTasks('grunt-contrib-clean');
   grunt.loadNpmTasks('grunt-concurrent');
   grunt.loadNpmTasks('grunt-notify');
   grunt.loadNpmTasks('grunt-postcss');
@@ -197,7 +200,8 @@ module.exports = function (grunt) {
       'postcss:expanded',
       'postcss:min',
       'concat:dist',
-      'uglify:dist'
+      'uglify:dist',
+      'clean:temp'
     ]
   );
 
