@@ -197,9 +197,7 @@ module.exports = function (grunt) {
       'postcss:expanded',
       'postcss:min',
       'concat:dist',
-      'uglify:dist',
-      'uglify:extras',
-      'clean:temp'
+      'uglify:dist'
     ]
   );
 
