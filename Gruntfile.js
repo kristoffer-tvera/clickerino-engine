@@ -205,7 +205,7 @@ module.exports = function (grunt) {
     ]
   );
 
-  grunt.registerTask('sass_compile', ['sass:expanded', 'notify:sass_compile']);
+  grunt.registerTask('sass_compile', ['sass:expanded', 'sass:min', 'notify:sass_compile']);
   grunt.registerTask('server', ['browserSync', 'notify:server']);
   grunt.registerTask('monitor', ["concurrent:monitor"]);
   grunt.registerTask('travis', ['sass_compile']);
