@@ -3,4 +3,4 @@
 # Useful .gitignore templates: https://github.com/github/gitignore
 /.vs
 /node_modules/*
-/css/site*css
+/css/*.css
