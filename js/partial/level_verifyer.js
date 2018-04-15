@@ -15,7 +15,31 @@ function check_level(level) {
         console.log('Something wrong in the namecheck!');
         return false;
     }
-    
+
+    if (!level.hasOwnProperty('achievements')) {
+        console.log('has no achievements');
+        return false;
+    }
+
+    if (!Array.isArray(level.achievements)) {
+        console.log('achievements is not a array');
+        return false;
+    }
+
+    level.achievements.forEach(element => {
+        if (!is_achievement(element)) {
+            console.log('Not an actual achievement');
+            return false;
+        }
+    });
+
+    for (let index = 0; index < level.achievements.length; index++) {
+        if (!is_achievement(level.achievements[index])) {
+            console.log('Not an actual achievement');
+            return false;
+        }
+    }
+
     return true;
 }
 
@@ -35,7 +59,7 @@ function check_name(name) {
         console.log('name was more than 50 str length');
         return false;
     }
-    
+
     return true;
 }
 
