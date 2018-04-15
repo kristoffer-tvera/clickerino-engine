@@ -64,15 +64,15 @@ function check_name(name) {
     return true;
 }
 
-function check_number(number) {
-    var num = new RegExp = /^[0-9]{10}|[.]$/i;
-    if (!Number.isInteger(number)) {
-        console.log("missing number");
-        return false;
-    }
+//function check_number(number) {
+//    var num = new RegExp = /^[0-9]{10}|[.]$/i;
+//    if (!Number.isInteger(number)) {
+//        console.log("missing number");
+//        return false;
+//    }
 
-    return true;
-}
+//    return true;
+//}
 
 function check_color(color) {
     var isOk = /^#[0-9A-F]{6}$/i.test()
