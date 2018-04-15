@@ -9,7 +9,7 @@
             "cost": "2",
             "cost_increase": "50%",
             "gain": "0.1",
-            "unlocked_by": "0"
+            "unlocked_on": "0"
         },
         {
             "name": "Sell lemonade",
@@ -18,7 +18,7 @@
             "cost": "10",
             "cost_increase": "50%",
             "gain": "1",
-            "unlocked_by": "8"
+            "unlocked_on": "8"
         }
     ],
     "achievements": [

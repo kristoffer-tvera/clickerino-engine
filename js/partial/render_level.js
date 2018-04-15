@@ -1,4 +1,3 @@
-console.log('im alive');
 
 function render_level(level) {
     set_background_color(level.background_color);
@@ -6,10 +5,11 @@ function render_level(level) {
 
     var container = document.getElementById('level-container');
 
+    var button_list = container.querySelector('div.button-list__container');
+
     for (var i = 0; i < level.buttons.length; i++) {
-        var element = level.buttons[i];
-        var button = create_button(element);
-        container.appendChild(button);
+        var button = create_button(level.buttons[i]);
+        button_list.appendChild(button);
     }
 }
 
@@ -22,23 +22,25 @@ function set_title_bar(title) {
 }
 
 function create_button(button) {
-    var element = document.createElement('a');
+    var container = document.createElement('a');
 
     var icon = document.createElement('i');
     icon.classList.add('material-icons');
     icon.classList.add('left');
     icon.innerText = button.icon;
-    element.appendChild(icon);
+    container.appendChild(icon);
 
-    var text = document.createElement('p');
+    var text = document.createElement('span');
     text.innerText = button.name;
-    element.appendChild(text);
+    container.appendChild(text);
 
     // element.style.backgroundColor = button.color;
-    element.classList.add('waves-effect');
-    element.classList.add('waves-light');
-    element.classList.add('btn');
+    container.classList.add('button__container');
+    container.classList.add(button.color)
 
+    container.setAttribute('href', '#!');
 
-    return element;
+    container.addEventListener("click", button_click);
+
+    return container;
 }

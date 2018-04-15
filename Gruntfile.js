@@ -73,11 +73,10 @@ module.exports = function (grunt) {
       dist: {
         // the files to concatenate
         src: [
+          'js/partial/event_handlers.js',
           'js/partial/render_level.js',
           "js/main.js",
-          "js/plugins.js",
-          "js/partial/one.js",
-          "js/partial/two.js",
+          "js/plugins.js"
         ],
         // the location of the resulting JS file
         dest: 'js/site.js'
@@ -89,11 +88,10 @@ module.exports = function (grunt) {
           sourceMapStyle: 'link'
         },
         src: [
+          'js/partial/event_handlers.js',
           'js/partial/render_level.js',
           "js/main.js",
-          "js/plugins.js",
-          "js/partial/one.js",
-          "js/partial/two.js",
+          "js/plugins.js"
         ],
         // the location of the resulting JS file
         dest: 'js/site.js'
