@@ -65,7 +65,8 @@ function check_name(name) {
 }
 
 function check_number(number) {
-    var isNumOk = /^[0-9]{10}|[.]$/i.test(number);
+    // Reg ex checks if number is not empty string. Number can only contain int or string numbers.
+    var isNumOk = /^-?\d+\.?\d*$/i.test(number);
     if (!isNumOk) {
         console.log("missing number");
         return false;
