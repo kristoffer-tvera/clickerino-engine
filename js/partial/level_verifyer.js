@@ -11,11 +11,12 @@ function check_level(level) {
         return false;
     }
 
-    if (name_check(level.name)) {
+    if (check_name(level.name)) {
         console.log('Something wrong in the namecheck!');
         return false;
     }
 
+    
     return true;
 }
 
@@ -35,9 +36,13 @@ function check_name(name) {
         console.log('name was more than 50 str length');
         return false;
     }
+    
     return true;
 }
 
+function check_number(number) {
+
+}
 
 function is_achievement(achievement) {
     if (!achievement.hasOwnProperty('name')) {
