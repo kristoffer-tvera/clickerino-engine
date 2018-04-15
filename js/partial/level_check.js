@@ -64,15 +64,15 @@ function check_name(name) {
     return true;
 }
 
-//function check_number(number) {
-//    var num = new RegExp = /^[0-9]{10}|[.]$/i;
-//    if (!Number.isInteger(number)) {
-//        console.log("missing number");
-//        return false;
-//    }
+function check_number(number) {
+    var isNumOk = /^[0-9]{10}|[.]$/i.test(number);
+    if (!isNumOk) {
+        console.log("missing number");
+        return false;
+    }
 
-//    return true;
-//}
+    return true;
+}
 
 function check_color(color) {
     var isOk = /^#[0-9A-F]{6}$/i.test(color)
@@ -83,27 +83,29 @@ function check_color(color) {
     return true;
 }
 
+
 function check_achievement(achievement) {
-    if (!achievement.hasOwnProperty('name')) {
-        console.log('No name found');
-    } else {
-        //mer sjekking av achievement.name
-    }
+        if (!check_name(achievement.name)) {
+            console.log('No name found');
+            return false;
+        } else {
+            //mer sjekking av achievement.name
+        }
 
-    if (!achievement.hasOwnProperty('icon')) {
-        console.log('No Icon');
-    }
+        if (!achievement.hasOwnProperty('icon')) {
+            console.log('No Icon');
+        }
 
-    if (!check_number(achievements.score)) {
-        console.log('No socre');
-        return false;
-    }
+        if (!check_number(achievements.score)) {
+            console.log('No socre');
+            return false;
+        }
 
-    if (!achievement.hasOwnProperty('unlocked_on')) {
-        console.log('No unlock criteria');
-    }
+        if (!achievement.hasOwnProperty('unlocked_on')) {
+            console.log('No unlock criteria');
+        }
 
-    if (!achievement.hasOwnProperty('flavour_text')) {
-        console.log('No flavour-text');
+        if (!achievement.hasOwnProperty('flavour_text')) {
+            console.log('No flavour-text');
+        }
     }
-}
