@@ -15,7 +15,6 @@ function check_level(level) {
         console.log('Something wrong in the namecheck!');
         return false;
     }
-
     
     return true;
 }
@@ -41,7 +40,11 @@ function check_name(name) {
 }
 
 function check_number(number) {
-
+    if (!number) {
+        console.log("missing number");
+        return false;
+    }
+    if (number.is)
 }
 
 function is_achievement(achievement) {
