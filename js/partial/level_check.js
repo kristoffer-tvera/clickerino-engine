@@ -71,13 +71,9 @@ function check_number(number) {
         console.log("missing number");
         return false;
     }
-    if (!number > 0) {
-        console.log("greater than zero");
-        return false;
-    }
-
     return true;
 }
+
 function check_gt_zero(number) {
     if (!number > 0) {
         console.log("greater than zero");
@@ -85,7 +81,7 @@ function check_gt_zero(number) {
     }
     return true;
 }
-
+// Checks for valid hex color values
 function check_color(color) {
     var isOk = /^#[0-9A-F]{6}$/i.test(color)
     if (!isOk) {
