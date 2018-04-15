@@ -65,7 +65,7 @@ function check_name(name) {
 }
 
 function check_number(number) {
-    if (isNaN(true)) {
+    if (!Number.isInteger(number)) {
         console.log("missing number");
         return false;
     }
