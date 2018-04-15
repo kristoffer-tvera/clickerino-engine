@@ -81,7 +81,7 @@ function check_gt_zero(number) {
     }
     return true;
 }
-// Checks for valid hex color values
+// Checks for valid hex color values of 6 digits
 function check_color(color) {
     var isOk = /^#[0-9A-F]{6}$/i.test(color)
     if (!isOk) {
@@ -90,7 +90,15 @@ function check_color(color) {
     }
     return true;
 }
-
+// Checks for correct css code for buttons e.g 
+function check_color_css(color) {
+    var list = ['black', 'blue', 'red',];
+    if (list.indexOf(color) < 0) {
+        console.log("This css color is not allowed");
+        return false;
+    }
+    return true;
+}
 
 
 function check_achievement(achievement) {
