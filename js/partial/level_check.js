@@ -75,8 +75,8 @@ function check_name(name) {
 //}
 
 function check_color(color) {
-    var isOk = /^#[0-9A-F]{6}$/i.test()
-    if (!color === isOk) {
+    var isOk = /^#[0-9A-F]{6}$/i.test(color)
+    if (!isOk) {
         console.log("Not a valid hex color");
         return false;
     }
