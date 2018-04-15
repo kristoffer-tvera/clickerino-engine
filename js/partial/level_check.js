@@ -71,7 +71,18 @@ function check_number(number) {
         console.log("missing number");
         return false;
     }
+    if (!number > 0) {
+        console.log("greater than zero");
+        return false;
+    }
 
+    return true;
+}
+function check_gt_zero(number) {
+    if (!number > 0) {
+        console.log("greater than zero");
+        return false;
+    }
     return true;
 }
 
@@ -85,28 +96,33 @@ function check_color(color) {
 }
 
 
+
 function check_achievement(achievement) {
-        if (!check_name(achievement.name)) {
-            console.log('No name found');
-            return false;
-        } else {
-            //mer sjekking av achievement.name
-        }
-
-        if (!achievement.hasOwnProperty('icon')) {
-            console.log('No Icon');
-        }
-
-        if (!check_number(achievements.score)) {
-            console.log('No socre');
-            return false;
-        }
-
-        if (!achievement.hasOwnProperty('unlocked_on')) {
-            console.log('No unlock criteria');
-        }
-
-        if (!achievement.hasOwnProperty('flavour_text')) {
-            console.log('No flavour-text');
-        }
+    if (!check_name(achievement.name)) {
+        console.log('No name found');
+        return false;
+    } else {
+        //mer sjekking av achievement.name
     }
+
+    if (!achievement.hasOwnProperty('icon')) {
+        console.log('No Icon');
+    }
+
+    if (!check_number(achievements.score)) {
+        console.log('No socre');
+        return false;
+    }
+    if (!check_gt_zero(achievement.score)) {
+        console.log('Score is not greater than zero');
+        return false;
+    }
+
+    if (!achievement.hasOwnProperty('unlocked_on')) {
+        console.log('No unlock criteria');
+    }
+
+    if (!achievement.hasOwnProperty('flavour_text')) {
+        console.log('No flavour-text');
+    }
+}
