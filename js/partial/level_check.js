@@ -117,13 +117,18 @@ function check_achievement(achievement) {
         console.log('No socre');
         return false;
     }
-    if (!check_gt_zero(achievement.score)) {
+    if (!check_gt_zero(achievements.score)) {
         console.log('Score is not greater than zero');
         return false;
     }
 
-    if (!achievement.hasOwnProperty('unlocked_on')) {
+    if (!checkNumber(achievements.unlocked_by)) {
         console.log('No unlock criteria');
+        return false;
+    }
+    if (!check_gt_zero(achievements.unlocked_by)) {
+        console.log('Number cannot be 0');
+        return false;
     }
 
     if (!achievement.hasOwnProperty('flavour_text')) {
