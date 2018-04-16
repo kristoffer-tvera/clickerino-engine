@@ -1,71 +1,102 @@
 // JavaScript source code
 
+
+// Function to check an entire level - This is the main function called for level checking.
+
+
 function check_level(level) {
     if (!level) {
-        console.log('empty level found!')
+        console.log("empty level found!")
         return false;
     }
 
-    if (!level.hasOwnProperty('name')) {
-        console.log('I have no name!')
+    if (!level.hasOwnProperty("name")) {
+        console.log("I have no name!")
         return false;
     }
 
     if (!check_name(level.name)) {
-        console.log('Something wrong in the namecheck!');
+        console.log("Something wrong in the namecheck!");
+        return false;
+    }
+    if (level.hasOwnProperty("background-color")) {
+        console.log("Missing background color for the level");
         return false;
     }
 
-    if (!level.hasOwnProperty('achievements')) {
-        console.log('has no achievements');
+    if (!level.hasOwnProperty("buttons")) {
+        console.log("has no buttons");
+        return false;
+    }
+
+    if (!Array.isArray(level.buttons)) {
+        console.log("Buttons are not in an array");
+        return false;
+    }
+
+    for (var index = 0; index < level.buttons.length; index++) {
+        if (!check_buttons(level.buttons[index])) {
+            console.log("Not an actual button");
+            return false;
+        }
+    }
+
+    if (!level.hasOwnProperty("achievements")) {
+        console.log("has no achievements");
         return false;
     }
 
     if (!Array.isArray(level.achievements)) {
-        console.log('achievements is not a array');
+        console.log("achievements is not a array");
         return false;
     }
 
-    //level.achievements.forEach(element => {
-    //    if (!check_achievement(element)) {
-    //        console.log('Not an actual achievement');
-    //        return false;
-    //    }
-    //});
-
     for (var index = 0; index < level.achievements.length; index++) {
-        if (!check_achievement(level.achievements[index])) {
-            console.log('Not an actual achievement');
+        if (!check_achievements(level.achievements[index])) {
+            console.log("Not an actual achievement");
             return false;
         }
     }
 
     return true;
+
+    // Alternative to for loop
+    //level.achievements.forEach(element => {
+    //    if (!check_achievement(element)) {
+    //        console.log("Not an actual achievement");
+    //        return false;
+    //    }
+    //});
 }
+
+
+// Name checking function, name cannot be left empty, cannot be empty string or lenght more than 50 chars.
 
 
 function check_name(name) {
     // Hvis den IKKE har gyldig navn
     if (!name) {
-        console.log('no name!');
+        console.log("no name!");
         return false;
     }
 
-    if (name == '') {
-        console.log('name was empty string');
+    if (name == "") {
+        console.log("name was empty string");
         return false;
     }
 
     if (name.length > 50) {
-        console.log('name was more than 50 str length');
+        console.log("name was more than 50 str length");
         return false;
     }
 
     return true;
 }
 
+// Regex check for number
+
 function check_number(number) {
-    // Reg ex checks if number is not empty string. Number can only contain int or string numbers.
+    // Regex checks if number is not empty string. Number can only contain int or string numbers.
     var isNumOk = /^-?\d+\.?\d*$/i.test(number);
     if (!isNumOk) {
         console.log("missing number");
@@ -74,6 +105,10 @@ function check_number(number) {
     return true;
 }
 
+
+// Checks if number is greater than zero
+
+
 function check_gt_zero(number) {
     if (!number > 0) {
         console.log("greater than zero");
@@ -81,7 +116,11 @@ function check_gt_zero(number) {
     }
     return true;
 }
+
+
 // Checks for valid hex color values of 6 digits
+
+
 function check_color(color) {
     var isOk = /^#[0-9A-F]{6}$/i.test(color)
     if (!isOk) {
@@ -90,9 +129,13 @@ function check_color(color) {
     }
     return true;
 }
-// Checks for correct css code for buttons e.g 
+
+
+// Checks for correct css code for buttons e.g
+
+
 function check_color_css(color) {
-    var list = ['black', 'blue', 'red',];
+    var list = ["black", "blue", "red",];
     if (list.indexOf(color) < 0) {
         console.log("This css color is not allowed");
         return false;
@@ -101,37 +144,99 @@ function check_color_css(color) {
 }
 
 
-function check_achievement(achievement) {
-    if (!check_name(achievement.name)) {
-        console.log('No name found');
+// Checking achievements for correct information
+
+
+function check_achievements(achievements) {
+    if (!check_name(achievements.name)) {
+        console.log("No name found");
         return false;
-    } else {
-        //mer sjekking av achievement.name
-    }
+    } 
 
-    if (!achievement.hasOwnProperty('icon')) {
-        console.log('No Icon');
+    if (!achievements.hasOwnProperty("icon")) {
+        console.log("No Icon");
     }
-
+    if (!achievements.hasOwnProperty("score")) {
+        console.log("insert score");
+        return false; 
+    }
     if (!check_number(achievements.score)) {
-        console.log('No socre');
+        console.log("No socre");
         return false;
     }
     if (!check_gt_zero(achievements.score)) {
-        console.log('Score is not greater than zero');
+        console.log("Score is not greater than zero");
         return false;
     }
 
-    if (!checkNumber(achievements.unlocked_by)) {
-        console.log('No unlock criteria');
-        return false;
-    }
-    if (!check_gt_zero(achievements.unlocked_by)) {
-        console.log('Number cannot be 0');
+    if (!check_number(achievements.unlocked_on)) {
+        console.log("No unlock criteria");
         return false;
     }
 
-    if (!achievement.hasOwnProperty('flavour_text')) {
-        console.log('No flavour-text');
+    if (!check_gt_zero(achievements.unlocked_on)) {
+        console.log("Number cannot be 0");
+        return false;
     }
+
+    if (!achievements.hasOwnProperty("flavour_text")) {
+        console.log("No flavour-text");
+        return false;
+    }
+    return true;
 }
+
+
+//Checking buttons for correct information
+
+
+function check_buttons(buttons) {
+    if (!check_name(buttons.name)) {
+        console.log("No name found");
+        return false;
+    }
+
+    if (!buttons.hasOwnProperty("color")) {
+        console.log("Missing a color");
+        return false;
+    }
+
+    if (!check_color(buttons.color)) {
+        console.log("Missing valid hex color value");
+        return false;
+    }
+
+    if (!buttons.hasOwnProperty("icon")) {
+        console.log("No Icon");
+        return false;
+    }
+
+    if (!buttons.hasOwnProperty("score")) {
+        console.log("insert score");
+        return false;
+    }
+
+    if (!check_number(buttons.cost)) {
+        console.log("No socre");
+        return false;
+    }
+
+    if (!check_gt_zero(buttons.cost)) {
+        console.log("Score is not greater than zero");
+        return false;
+    }
+    // Need to display these as well, cost increase in % 
+    // Unlocked by is the last option inside buttons
+    if (!check_number(buttons.unlocked_by)) {
+        console.log("No unlock criteria");
+        return false;
+    }
+
+    if (!check_gt_zero(buttons.unlocked_by)) {
+        console.log("Number cannot be 0");
+        return false;
+    }
+    return true;
+
+}
+
