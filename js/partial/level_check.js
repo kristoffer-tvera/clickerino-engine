@@ -97,8 +97,8 @@ function check_name(name) {
 
 function check_number(number) {
     // Regex checks if number is not empty string. Number can only contain int or string numbers.
-    var isNumOk = /^-?\d+\.?\d*$/i.test(number);
-    if (!isNumOk) {
+    var rexEgNum = /^-?\d+\.?\d*$/i.test(number);
+    if (!rexEgNum) {
         console.log("missing number");
         return false;
     }
@@ -122,8 +122,8 @@ function check_gt_zero(number) {
 
 
 function check_color(color) {
-    var isOk = /^#[0-9A-F]{6}$/i.test(color)
-    if (!isOk) {
+    var regExTestColor = /^#[0-9A-F]{6}$/i.test(color)
+    if (!regExTestColor) {
         console.log("Not a valid hex color");
         return false;
     }
@@ -135,14 +135,29 @@ function check_color(color) {
 
 
 function check_color_css(color) {
-    var list = ["black", "blue", "red",];
+    var list = ["black", "blue", "red"];
     if (list.indexOf(color) < 0) {
         console.log("This css color is not allowed");
         return false;
-    }
+    } 
     return true;
 }
 
+// Percentage checker, needs testing
+function check_percentage(number) {
+    var regExTest = /^\d[\d]*%$/i.test(number);
+    if (!regExTest) {
+        console.log("Fix input");
+        return false;
+    }
+
+    if (number.length > 6) {
+        console.log("Too high");
+        return false;
+    }
+
+    return true;
+}
 
 // Checking achievements for correct information
 
@@ -191,6 +206,12 @@ function check_achievements(achievements) {
 
 
 function check_buttons(buttons) {
+
+    if (!buttons.hasOwnProperty("name")) {
+        console.log("Needs a name");
+        return false;
+    }
+
     if (!check_name(buttons.name)) {
         console.log("No name found");
         return false;
@@ -211,13 +232,13 @@ function check_buttons(buttons) {
         return false;
     }
 
-    if (!buttons.hasOwnProperty("score")) {
-        console.log("insert score");
+    if (!buttons.hasOwnProperty("cost")) {
+        console.log("insert Cost");
         return false;
     }
 
     if (!check_number(buttons.cost)) {
-        console.log("No socre");
+        console.log("No cost");
         return false;
     }
 
