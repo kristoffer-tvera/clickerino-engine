@@ -9,11 +9,11 @@
             "cost": "2",
             "cost_increase": "50%",
             "gain": "0.1",
-            "unlocked_by": "0"
+            "unlocked_on": "1"
         },
         {
             "name": "Sell lemonade",
-            "color": "#0bb0rf",
+            "color": "#000fff",
             "icon": "hourglass_empty",
             "cost": "10",
             "cost_increase": "50%",
