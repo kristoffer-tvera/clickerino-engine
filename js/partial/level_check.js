@@ -19,8 +19,13 @@ function check_level(level) {
         console.log("Something wrong in the namecheck!");
         return false;
     }
-    if (level.hasOwnProperty("background-color")) {
+    if (!level.hasOwnProperty("background_color")) {
         console.log("Missing background color for the level");
+        return false;
+    }
+
+    if (!check_color(level.background_color)){
+        console.log("Missing a hex color value");
         return false;
     }
 
@@ -135,8 +140,7 @@ function check_color(color) {
 
 
 function check_color_css(color) {
-    var list = ["black", "blue", "red"];
-    if (list.indexOf(color) < 0) {
+    if (css_colors.indexOf(color) < 0) {
         console.log("This css color is not allowed");
         return false;
     } 
@@ -158,6 +162,15 @@ function check_percentage(number) {
 
     return true;
 }
+function check_icons(icon) {
+    var rexExTest = /^e[0-9][0-9a-f]{2}$/i.test(icon);
+    if (!rexExTest) {
+        console.log("not a valid icon");
+        return false;
+    }
+    return true;
+}
+
 
 // Checking achievements for correct information
 
@@ -171,10 +184,17 @@ function check_achievements(achievements) {
     if (!achievements.hasOwnProperty("icon")) {
         console.log("No Icon");
     }
+
+    if (!check_icons(achievements.icon)) {
+        console.log("Not a valid icon input");
+        return false;
+    }
+
     if (!achievements.hasOwnProperty("score")) {
         console.log("insert score");
         return false; 
     }
+
     if (!check_number(achievements.score)) {
         console.log("No socre");
         return false;
@@ -198,6 +218,11 @@ function check_achievements(achievements) {
         console.log("No flavour-text");
         return false;
     }
+    if (achievements.flavour_text.length > 200) {
+        console.log("Too long, not more than 200 chars");
+        return false;
+    }
+    
     return true;
 }
 
@@ -222,13 +247,18 @@ function check_buttons(buttons) {
         return false;
     }
 
-    if (!check_color(buttons.color)) {
-        console.log("Missing valid hex color value");
+    if (!check_color_css(buttons.color)) {
+        console.log("Missing valid css color value");
         return false;
     }
 
     if (!buttons.hasOwnProperty("icon")) {
         console.log("No Icon");
+        return false;
+    }
+
+    if (!check_icons(buttons.icon)) {
+        console.log("input a icon");
         return false;
     }
 
@@ -246,14 +276,39 @@ function check_buttons(buttons) {
         console.log("Score is not greater than zero");
         return false;
     }
-    // Need to display these as well, cost increase in % 
+
+    if (!buttons.hasOwnProperty("cost_increase")) {
+        console.log("Cost increase missing")
+        return false;
+    }
+
+    if (!check_percentage(buttons.cost_increase)) {
+        console.log("Increment the value in %, e.g 50%");
+        return false;
+    }
+
+    if (!buttons.hasOwnProperty("gain")) {
+        console.log("Gain missing");
+        return false;
+    }
+    if (!check_number(buttons.gain)) {
+        console.log("Not a valid gain number, input number");
+        return false;
+    }
+
     // Unlocked by is the last option inside buttons
-    if (!check_number(buttons.unlocked_by)) {
+
+    if (!buttons.hasOwnProperty("unlocked_on")) {
+        console.log("Define when this button is unlocked");
+        return false;
+    }
+
+    if (!check_number(buttons.unlocked_on)) {
         console.log("No unlock criteria");
         return false;
     }
 
-    if (!check_gt_zero(buttons.unlocked_by)) {
+    if (!check_gt_zero(buttons.unlocked_on)) {
         console.log("Number cannot be 0");
         return false;
     }

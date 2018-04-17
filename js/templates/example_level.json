@@ -1,20 +1,20 @@
 {
     "name": "Pepelegend",
-    "background_color": "#0000ff",
+    "background_color": "#00ff00",
     "buttons": [
         {
             "name": "Mow the lawn",
-            "color": "#0000ff",
-            "icon": "bug_report",
+            "color": "black",
+            "icon": "e637",
             "cost": "2",
             "cost_increase": "50%",
             "gain": "0.1",
-            "unlocked_on": "0"
+            "unlocked_on": "1"
         },
         {
             "name": "Sell lemonade",
-            "color": "#0bb0rf",
-            "icon": "hourglass_empty",
+            "color": "red",
+            "icon": "e637",
             "cost": "10",
             "cost_increase": "50%",
             "gain": "1",
@@ -24,7 +24,7 @@
     "achievements": [
         {
             "name": "Cutton the Crap",
-            "icon": "add_alert",
+            "icon": "e637",
             "score": "10",
             "unlocked_on": "10",
             "flavour_text": "You have started on your journey to a better self. Make a first step was taken this way."
