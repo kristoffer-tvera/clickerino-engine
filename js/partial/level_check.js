@@ -162,6 +162,15 @@ function check_percentage(number) {
 
     return true;
 }
+function check_icons(icon) {
+    var rexExTest = /^e[0-9][0-9a-f]{2}$/i.test(icon);
+    if (!rexExTest) {
+        console.log("not a valid icon");
+        return false;
+    }
+    return true;
+}
+
 
 // Checking achievements for correct information
 
