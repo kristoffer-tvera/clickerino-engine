@@ -3,6 +3,7 @@
     "background_color": "#00ff00",
     "buttons": [
         {
+            "id": "0",
             "name": "Mow the lawn",
             "color": "black",
             "icon": "e637",
@@ -12,6 +13,7 @@
             "unlocked_on": "1"
         },
         {
+            "id": "1",
             "name": "Sell lemonade",
             "color": "red",
             "icon": "e637",

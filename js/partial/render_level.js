@@ -33,20 +33,23 @@ function create_button(button) {
     var icon = document.createElement('i');
     icon.classList.add('material-icons');
     icon.classList.add('left');
-    icon.innerText = button.icon;
+    // icon.innerText = '&#x' + button.icon + ';';
+    icon.innerHTML = '&#x' + button.icon + ';';
     container.appendChild(icon);
 
     var text = document.createElement('span');
     text.innerText = button.name;
     container.appendChild(text);
 
-    // element.style.backgroundColor = button.color;
     container.classList.add('button__container');
     container.classList.add(button.color)
 
+    container.setAttribute('data-id', button.id);
     container.setAttribute('href', '#!');
+    // container.setAttribute('onclick', "console.log('hei')");
+    container.id = button.id;
 
-    container.addEventListener("click", button_click);
+    container.addEventListener("click", button_click, false);
 
     return container;
 }

@@ -1,13 +1,16 @@
-function button_click(button) {
-    console.log('botton was clicked');
+function button_click(e) {
+    var id = 0;
+    if (e && e.target.nodeName.toLocaleLowerCase() == 'a') {
+        id = e.target.getAttribute('data-id');
+    } else {
+        id = e.target.parentElement.getAttribute('data-id');
+    }
+    console.log('hei, ' + id);
+
 }
 
 
 function drag_and_drop_handle(ev) {
-    // event.preventDefault();
-    // alert('drop!');
-
-
     if (ev.dataTransfer.items) {
         // Use DataTransferItemList interface to access the file(s)
         for (var i = 0; i < ev.dataTransfer.items.length; i++) {
@@ -45,17 +48,9 @@ drag_and_drop.addEventListener('dragleave', function (e) {
 
 drag_and_drop.addEventListener('drop', function (e) {
     e.preventDefault();
-    // alert('test');
-    // return false;
     drag_and_drop_handle(e);
     drag_and_drop.style.visibility = 'hidden';
 });
-
-// window.addEventListener('dragenter', function (e) {
-//     e.preventDefault();
-
-//     drag_and_drop.style.visibility = 'visible';
-// });
 
 window.addEventListener("dragover", function (e) {
     e = e || event;
