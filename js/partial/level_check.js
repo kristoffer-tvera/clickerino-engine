@@ -19,8 +19,13 @@ function check_level(level) {
         console.log("Something wrong in the namecheck!");
         return false;
     }
-    if (level.hasOwnProperty("background-color")) {
+    if (!level.hasOwnProperty("background_color")) {
         console.log("Missing background color for the level");
+        return false;
+    }
+
+    if (!check_color.level.background_color) {
+        console.log("Missing a hex color value");
         return false;
     }
 
@@ -273,17 +278,17 @@ function check_buttons(buttons) {
 
     // Unlocked by is the last option inside buttons
 
-    if (!buttons.hasOwnProperty("Unlocked_by")) {
+    if (!buttons.hasOwnProperty("Unlocked_on")) {
         console.log("Define when this button is unlocked");
         return false;
     }
 
-    if (!check_number(buttons.unlocked_by)) {
+    if (!check_number(buttons.unlocked_on)) {
         console.log("No unlock criteria");
         return false;
     }
 
-    if (!check_gt_zero(buttons.unlocked_by)) {
+    if (!check_gt_zero(buttons.unlocked_on)) {
         console.log("Number cannot be 0");
         return false;
     }

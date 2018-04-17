@@ -1,6 +1,6 @@
 {
     "name": "Pepelegend",
-    "background_image": "https://fillmurray.com/200/200",
+    "background_color": "https://fillmurray.com/200/200",
     "buttons": [
         {
             "name": "Mow the lawn",
@@ -18,7 +18,7 @@
             "cost": "10",
             "cost_increase": "50%",
             "gain": "1",
-            "unlocked_by": "8"
+            "unlocked_on": "8"
         }
     ],
     "achievements": [
