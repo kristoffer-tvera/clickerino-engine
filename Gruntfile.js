@@ -65,42 +65,42 @@ module.exports = function (grunt) {
             }
         },
 
-        //  Concat
-        concat: {
-            options: {
-                separator: ';'
-            },
-            dist: {
-                // the files to concatenate
-                src: [
-                    "js/main.js",
-                    "js/plugins.js",
-                    "js/partial/one.js",
-                    "js/partial/two.js",
-                    "js/partial/level_check.js",
+    //  Concat
+    concat: {
+      options: {
+        separator: ';'
+      },
+      dist: {
+        // the files to concatenate
+        src: [
+          'js/partial/event_handlers.js',
+          'js/partial/render_level.js',
+          "js/main.js",
+          "js/plugins.js"
+        ],
+        // the location of the resulting JS file
+        dest: 'js/site.js'
+      },
+      temp: {
+        // the files to concatenate
+        options: {
+          sourceMap: true,
+          sourceMapStyle: 'link'
                     "js/partial/globals.js",
-                ],
-                // the location of the resulting JS file
-                dest: 'js/site.js'
-            },
-            temp: {
-                // the files to concatenate
-                options: {
-                    sourceMap: true,
-                    sourceMapStyle: 'link'
-                },
-                src: [
-                    "js/main.js",
-                    "js/plugins.js",
-                    "js/partial/one.js",
-                    "js/partial/two.js",
                     "js/partial/level_check.js",
                     "js/partial/globals.js"
-                ],
-                // the location of the resulting JS file
-                dest: 'js/site.js'
-            },
+                    "js/partial/level_check.js",
         },
+        src: [
+          'js/partial/event_handlers.js',
+          'js/partial/render_level.js',
+          "js/main.js",
+          "js/plugins.js"
+        ],
+        // the location of the resulting JS file
+        dest: 'js/site.js'
+      },
+    },
 
         //  Uglify
         uglify: {
