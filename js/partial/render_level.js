@@ -45,6 +45,7 @@ function create_button(button) {
     container.classList.add(button.color)
 
     container.setAttribute('data-id', button.id);
+    container.setAttribute('data-gain', button.gain);
     container.setAttribute('href', '#!');
     // container.setAttribute('onclick', "console.log('hei')");
     container.id = button.id;

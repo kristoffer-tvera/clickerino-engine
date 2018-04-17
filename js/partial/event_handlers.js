@@ -1,12 +1,17 @@
 function button_click(e) {
     var id = 0;
+    var score_per_second_gain;
+
     if (e && e.target.nodeName.toLocaleLowerCase() == 'a') {
         id = e.target.getAttribute('data-id');
+        score_per_second_gain = e.target.getAttribute('data-gain');
     } else {
         id = e.target.parentElement.getAttribute('data-id');
+        score_per_second_gain = e.target.parentElement.getAttribute('data-gain');
     }
-    console.log('hei, ' + id);
 
+    add_new_inventory(id);
+    update_score_per_second(score_per_second_gain);
 }
 
 

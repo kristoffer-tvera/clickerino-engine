@@ -14,10 +14,10 @@ var Level;
 // Player
 var Player = {
     "score": 0,
-    "score_per_second": 0,
+    "score_per_tick": 1,
     "inventory": [
-        { "id": "0", "count": "7" },
-        { "id": "1", "count": "4" },
+        { "id": "0", "count": 7 },
+        { "id": "1", "count": 4 },
     ]
 }
 
