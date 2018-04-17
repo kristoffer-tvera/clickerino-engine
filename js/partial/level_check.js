@@ -184,10 +184,17 @@ function check_achievements(achievements) {
     if (!achievements.hasOwnProperty("icon")) {
         console.log("No Icon");
     }
+
+    if (!check_icon(achievements.icon)) {
+        console.log("Not a valid icon input");
+        return false;
+    }
+
     if (!achievements.hasOwnProperty("score")) {
         console.log("insert score");
         return false; 
     }
+
     if (!check_number(achievements.score)) {
         console.log("No socre");
         return false;
@@ -240,13 +247,18 @@ function check_buttons(buttons) {
         return false;
     }
 
-    if (!check_color(buttons.color)) {
-        console.log("Missing valid hex color value");
+    if (!check_color_css(buttons.color)) {
+        console.log("Missing valid css color value");
         return false;
     }
 
     if (!buttons.hasOwnProperty("icon")) {
         console.log("No Icon");
+        return false;
+    }
+
+    if (!check_icons(buttons.icon)) {
+        console.log("input a icon");
         return false;
     }
 
