@@ -185,7 +185,7 @@ function check_achievements(achievements) {
         console.log("No Icon");
     }
 
-    if (!check_icon(achievements.icon)) {
+    if (!check_icons(achievements.icon)) {
         console.log("Not a valid icon input");
         return false;
     }
