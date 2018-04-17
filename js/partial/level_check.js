@@ -198,6 +198,11 @@ function check_achievements(achievements) {
         console.log("No flavour-text");
         return false;
     }
+    if (achievement.flavour_text.length > 200) {
+        console.log("Too long, not more than 200 chars");
+        return false;
+    }
+    
     return true;
 }
 
@@ -246,8 +251,33 @@ function check_buttons(buttons) {
         console.log("Score is not greater than zero");
         return false;
     }
-    // Need to display these as well, cost increase in % 
+
+    if (!buttons.hasOwnProperty("Cost_increase")) {
+        console.log("Cost increse missing")
+        return false;
+    }
+
+    if (!check_percentage(buttons.cost_increase)) {
+        console.log("Increment the value in %, e.g 50%");
+        return false;
+    }
+
+    if (!buttons.hasOwnProperty("gain")) {
+        console.log("Gain missing");
+        return false;
+    }
+    if (!check_number(buttons.gain)) {
+        console.log("Not a valid gain number, input number");
+        return false;
+    }
+
     // Unlocked by is the last option inside buttons
+
+    if (!buttons.hasOwnProperty("Unlocked_by")) {
+        console.log("Define when this button is unlocked");
+        return false;
+    }
+
     if (!check_number(buttons.unlocked_by)) {
         console.log("No unlock criteria");
         return false;
