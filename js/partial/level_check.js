@@ -24,7 +24,7 @@ function check_level(level) {
         return false;
     }
 
-    if (!check_color.level.background_color) {
+    if (!check_color(level.background_color) {
         console.log("Missing a hex color value");
         return false;
     }
