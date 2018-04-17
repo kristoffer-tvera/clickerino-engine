@@ -32,11 +32,16 @@
     <link rel="stylesheet" href="css/site.min.css">
 </head>
 
-<body ondrop="parse_level(event)">
+<body>
     <!--[if lte IE 9]>
             <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
         <![endif]-->
     <!-- Add your site or application content here -->
+
+    <div class="main-stage__drag-and-drop" ondrop="drag_and_drop_handle(event)">
+        <h1>Drop the files here to load a new level</h1>
+    </div>
+
     <nav>
         <div class="nav-wrapper">
             <a href="#" class="brand-logo">Logo</a>
