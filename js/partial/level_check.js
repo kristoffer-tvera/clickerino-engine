@@ -24,7 +24,7 @@ function check_level(level) {
         return false;
     }
 
-    if (!check_color(level.background_color) {
+    if (!check_color(level.background_color)){
         console.log("Missing a hex color value");
         return false;
     }
@@ -203,7 +203,7 @@ function check_achievements(achievements) {
         console.log("No flavour-text");
         return false;
     }
-    if (achievement.flavour_text.length > 200) {
+    if (achievements.flavour_text.length > 200) {
         console.log("Too long, not more than 200 chars");
         return false;
     }
@@ -257,8 +257,8 @@ function check_buttons(buttons) {
         return false;
     }
 
-    if (!buttons.hasOwnProperty("Cost_increase")) {
-        console.log("Cost increse missing")
+    if (!buttons.hasOwnProperty("cost_increase")) {
+        console.log("Cost increase missing")
         return false;
     }
 
@@ -278,7 +278,7 @@ function check_buttons(buttons) {
 
     // Unlocked by is the last option inside buttons
 
-    if (!buttons.hasOwnProperty("Unlocked_on")) {
+    if (!buttons.hasOwnProperty("unlocked_on")) {
         console.log("Define when this button is unlocked");
         return false;
     }
