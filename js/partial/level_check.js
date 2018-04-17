@@ -140,8 +140,7 @@ function check_color(color) {
 
 
 function check_color_css(color) {
-    var list = ["black", "blue", "red"];
-    if (list.indexOf(color) < 0) {
+    if (css_colors.indexOf(color) < 0) {
         console.log("This css color is not allowed");
         return false;
     } 
