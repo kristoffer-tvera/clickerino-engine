@@ -1,4 +1,4 @@
-var level;
+// var level;
 
 // document.getElementById('levelParseStart').addEventListener('click', function (e) {
 //     level = JSON.parse(
@@ -12,8 +12,9 @@ request.overrideMimeType('application/json');
 request.open('get', '/js/templates/example_level.json', true)
 request.onreadystatechange = function () {
     if (request.readyState === 4 && request.status == "200") {
-        level = JSON.parse(request.responseText);
+        var level = JSON.parse(request.responseText);
         console.log(level);
+        render_level(level)
     }
 }
 request.send();

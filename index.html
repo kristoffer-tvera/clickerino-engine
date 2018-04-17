@@ -32,7 +32,7 @@
     <link rel="stylesheet" href="css/site.min.css">
 </head>
 
-<body>
+<body ondrop="parse_level(event)">
     <!--[if lte IE 9]>
             <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
         <![endif]-->
@@ -42,33 +42,34 @@
             <a href="#" class="brand-logo">Logo</a>
             <ul id="nav-mobile" class="right hide-on-med-and-down">
                 <li>
-                    <a href="#">About</a>
+                    <a href="#">About us</a>
                 </li>
                 <li>
-                    <a href="#">Use it</a>
+                    <a href="#">Make your own levels</a>
                 </li>
                 <li>
-                    <a href="#">Documentation</a>
+                    <a href="#">Documentation & Sourcecode </a>
                 </li>
             </ul>
         </div>
     </nav>
-    <h1 id="title-bar"></h1>
+
+    <h1 id="title-bar" class="main-stage__header">Clickerino</h1>
 
     <div id="level-container" class="container">
-        <div class="row">
-            <div class="col s12 l6">
+        <div class="row main-stage__hero">
+            <div class="col s12 l6 main-stage__left">
                 Klokka vår
             </div>
-            <div class="col s12 l6">
+            <div class="col s12 l6 main-stage__right">
                 <div class="button-list__container">
 
                 </div>
             </div>
         </div>
+        <div class="footer main-stage__footer">
 
-
-
+        </div>
     </div>
 
     <!-- <textarea name="debug" id="levelDropZone" cols="30" rows="60" style="height:20rem"></textarea>

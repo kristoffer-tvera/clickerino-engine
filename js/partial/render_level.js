@@ -13,6 +13,12 @@ function render_level(level) {
     }
 }
 
+function wipe_level() {
+    set_background_color('#fff');
+    set_title_bar('Clickerino');
+    document.querySelector('div.button-list__container').innerHTML = '';
+}
+
 function set_background_color(color) {
     document.body.style.backgroundColor = color;
 }
