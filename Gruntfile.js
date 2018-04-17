@@ -73,6 +73,8 @@ module.exports = function (grunt) {
       dist: {
         // the files to concatenate
         src: [
+          "js/partial/globals.js",
+          "js/partial/level_check.js",
           'js/partial/event_handlers.js',
           'js/partial/render_level.js',
           "js/main.js",
@@ -86,8 +88,12 @@ module.exports = function (grunt) {
         options: {
           sourceMap: true,
           sourceMapStyle: 'link'
+
+
         },
         src: [
+          "js/partial/globals.js",
+          "js/partial/level_check.js",
           'js/partial/event_handlers.js',
           'js/partial/render_level.js',
           "js/main.js",
