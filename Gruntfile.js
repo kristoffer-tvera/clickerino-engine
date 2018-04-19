@@ -77,6 +77,7 @@ module.exports = function (grunt) {
           "js/plugins.js",
           "js/partial/one.js",
           "js/partial/two.js",
+          "js/partial/achievements.js"
         ],
         // the location of the resulting JS file
         dest: 'js/site.js'
@@ -92,6 +93,7 @@ module.exports = function (grunt) {
           "js/plugins.js",
           "js/partial/one.js",
           "js/partial/two.js",
+          "js/partial/achievements.js"
         ],
         // the location of the resulting JS file
         dest: 'js/site.js'
