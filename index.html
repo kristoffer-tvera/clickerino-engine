@@ -1,4 +1,4 @@
-<!doctype html>
+﻿<!doctype html>
 <html class="no-js" lang="">
 
 <head>
@@ -22,6 +22,7 @@
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="96x96" href="/favicon/favicon-96x96.png">
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png">
+    <link rel="shortcut icon" href="/favicon.ico">
     <meta name="msapplication-TileColor" content="#ffffff">
     <meta name="msapplication-TileImage" content="/favicon/ms-icon-144x144.png">
     <meta name="theme-color" content="#ffffff">
@@ -36,30 +37,53 @@
             <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
         <![endif]-->
     <!-- Add your site or application content here -->
+
+    <div class="main-stage__drag-and-drop" ondrop="drag_and_drop_handle(event)">
+        <h1>Drop the files here to load a new level</h1>
+    </div>
+
     <nav>
         <div class="nav-wrapper">
             <a href="#" class="brand-logo">Logo</a>
             <ul id="nav-mobile" class="right hide-on-med-and-down">
                 <li>
-                    <a href="#">About</a>
+                    <a href="#">About us</a>
                 </li>
                 <li>
-                    <a href="#">Use it</a>
+                    <a href="#">Make your own levels</a>
                 </li>
                 <li>
-                    <a href="#">Documentation</a>
+                    <a href="#">Documentation & Sourcecode </a>
                 </li>
             </ul>
         </div>
     </nav>
-    <p>Hi memesters</p>
-    <textarea name="debug" id="levelDropZone" cols="30" rows="60" style="height:20rem"></textarea>
+
+    <h1 id="title-bar" class="main-stage__header">Clickerino</h1>
+
+    <div id="level-container" class="container">
+        <div class="row main-stage__hero">
+            <div class="col s12 l6 main-stage__left">
+                Klokka vår
+            </div>
+            <div class="col s12 l6 main-stage__right">
+                <div class="button-list__container">
+
+                </div>
+            </div>
+        </div>
+        <div class="footer main-stage__footer">
+
+        </div>
+    </div>
+
+    <!-- <textarea name="debug" id="levelDropZone" cols="30" rows="60" style="height:20rem"></textarea>
     <input type="submit" id="levelParseStart">
-    <i class="material-icons">add</i>
+    <i class="material-icons">add</i> -->
     <script src="js/vendor/modernizr-3.5.0.min.js"></script>
     <script src="js/vendor/materialize.min.js"></script>
     <script src="js/site.min.js"></script>
-
+    <script src="js/partial/level_check.js"></script>
 </body>
 
 </html>
