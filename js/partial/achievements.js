@@ -10,3 +10,17 @@ function sumAchievementPoints(achiPts) {
   return total;
 
 }
+
+  var achievedList = [] // Placeholder global used for testing.
+
+  // list of current list of earned achievements
+  function earnedAchievements(current) {
+    return achievedList;
+ 
+  }
+ 
+   // Adds new achievements to the list of obtained achievements
+  function newAchievement(update) {
+   achievedList.push(update);
+  }
+ 
