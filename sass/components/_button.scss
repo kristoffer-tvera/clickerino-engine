@@ -7,6 +7,7 @@
         border: 1px solid $black;
         border-radius: 10px;
         background-color: #fff;
+        cursor: pointer;
 
         &.red {
             background-color: red;
@@ -37,14 +38,20 @@
             background-color: white;
             color: black;
         }
+
+        &.disabled {
+            pointer-events: none;
+            cursor: default;
+            opacity: 0.5;
+        }
     }
 
     &__icon {
-
+        margin: 1px;
     }
 
     &__text {
-
+        margin: 1px;
     }
 
     

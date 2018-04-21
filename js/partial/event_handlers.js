@@ -1,5 +1,17 @@
-function button_click(button) {
-    console.log('botton was clicked');
+function button_click(event) {
+    var button = event.target;
+    button.classList.add('disabled');
+    var cost = button.getAttribute("data-cost");
+    var gain = button.getAttribute("data-gain");
+    var cost_increase = button.getAttribute("data-cost-increase");
+
+
+
+    // if (can_afford(cost)) {
+
+    // }
+
+    button.classList.remove('disabled');
 }
 
 
