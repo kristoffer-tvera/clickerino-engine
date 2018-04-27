@@ -14,7 +14,7 @@ function sumAchievementPoints(achiPts) {
   var achievedList = [] // Placeholder global used for testing.
 
   // list of current list of earned achievements
-  function earnedAchievements(current) {
+  function earnedAchievements(  ) {
     return achievedList;
  
   }
