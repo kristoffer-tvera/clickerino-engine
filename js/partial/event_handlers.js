@@ -1,4 +1,18 @@
-function button_click(e) {
+function button_click(event) {
+    var button = event.target;
+    button.classList.add('disabled');
+    var cost = button.getAttribute("data-cost");
+    var gain = button.getAttribute("data-gain");
+    var cost_increase = button.getAttribute("data-cost-increase");
+
+
+
+    // if (can_afford(cost)) {
+
+    // }
+
+    button.classList.remove('disabled');
+}
     var id = 0;
     var score_per_second_gain;
 
@@ -67,3 +81,27 @@ window.addEventListener("drop", function (e) {
     e = e || event;
     e.preventDefault();
 }, false);
+
+// Listen for open click
+document.getElementById('snackbar').addEventListener('click', openModal);
+// Listen for close click
+document.getElementsByClassName('modal-closeBtn')[0].addEventListener('click', closeModal);
+// Listen for outside click
+window.addEventListener('click', outsideClick);
+
+// Function to open modal
+function openModal(){
+  document.getElementById('simpleModal').style.display = 'block';
+}
+
+// Function to close modal
+function closeModal(){
+  document.getElementById('simpleModal').style.display = 'none';
+}
+
+// Function to close modal if outside click
+function outsideClick(e){
+  if(e.target == document.getElementById('simpleModal')){
+    document.getElementById('simpleModal').style.display = 'none';
+  }
+}
