@@ -67,3 +67,27 @@ window.addEventListener("drop", function (e) {
     e = e || event;
     e.preventDefault();
 }, false);
+
+// Listen for open click
+document.getElementById('snackbar').addEventListener('click', openModal);
+// Listen for close click
+document.getElementsByClassName('modal-closeBtn')[0].addEventListener('click', closeModal);
+// Listen for outside click
+window.addEventListener('click', outsideClick);
+
+// Function to open modal
+function openModal(){
+  document.getElementById('simpleModal').style.display = 'block';
+}
+
+// Function to close modal
+function closeModal(){
+  document.getElementById('simpleModal').style.display = 'none';
+}
+
+// Function to close modal if outside click
+function outsideClick(e){
+  if(e.target == document.getElementById('simpleModal')){
+    document.getElementById('simpleModal').style.display = 'none';
+  }
+}
