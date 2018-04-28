@@ -23,4 +23,17 @@ function sumAchievementPoints(achiPts) {
   function newAchievement(update) {
    achievedList.push(update);
   }
+
+  function achievementPop(popup) {
+
+    var listAchievement = popup.name;
+
+    // Changes the content of the little popup window
+    document.getElementById("snackbar").innerHTML = listAchievement;
+      
+    // Shows / Hides the window in a set timer.
+    var x = document.getElementById("snackbar");
+    x.className = "show";
+    setTimeout(function(){ x.className = x.className.replace("show", ""); }, 3000);
+}
  
