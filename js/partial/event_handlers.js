@@ -12,20 +12,20 @@ function button_click(event) {
     // }
 
     button.classList.remove('disabled');
-}
-    var id = 0;
-    var score_per_second_gain;
 
-    if (e && e.target.nodeName.toLocaleLowerCase() == 'a') {
-        id = e.target.getAttribute('data-id');
-        score_per_second_gain = e.target.getAttribute('data-gain');
-    } else {
-        id = e.target.parentElement.getAttribute('data-id');
-        score_per_second_gain = e.target.parentElement.getAttribute('data-gain');
-    }
+    // var id = 0;
+    // var score_per_second_gain;
 
-    add_new_inventory(id);
-    update_score_per_second(score_per_second_gain);
+    // if (e && e.target.nodeName.toLocaleLowerCase() == 'a') {
+    //     id = e.target.getAttribute('data-id');
+    //     score_per_second_gain = e.target.getAttribute('data-gain');
+    // } else {
+    //     id = e.target.parentElement.getAttribute('data-id');
+    //     score_per_second_gain = e.target.parentElement.getAttribute('data-gain');
+    // }
+
+    // add_new_inventory(id);
+    // update_score_per_second(score_per_second_gain);
 }
 
 
@@ -90,18 +90,18 @@ document.getElementsByClassName('modal-closeBtn')[0].addEventListener('click', c
 window.addEventListener('click', outsideClick);
 
 // Function to open modal
-function openModal(){
-  document.getElementById('simpleModal').style.display = 'block';
+function openModal() {
+    document.getElementById('simpleModal').style.display = 'block';
 }
 
 // Function to close modal
-function closeModal(){
-  document.getElementById('simpleModal').style.display = 'none';
+function closeModal() {
+    document.getElementById('simpleModal').style.display = 'none';
 }
 
 // Function to close modal if outside click
-function outsideClick(e){
-  if(e.target == document.getElementById('simpleModal')){
-    document.getElementById('simpleModal').style.display = 'none';
-  }
+function outsideClick(e) {
+    if (e.target == document.getElementById('simpleModal')) {
+        document.getElementById('simpleModal').style.display = 'none';
+    }
 }
