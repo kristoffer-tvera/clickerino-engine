@@ -43,8 +43,9 @@ function create_button(button) {
     var icon = document.createElement('i');
     icon.classList.add('material-icons');
     icon.classList.add('left');
+    // icon.innerText = '&#x' + button.icon + ';';
+    icon.innerHTML = '&#x' + button.icon + ';';
     icon.classList.add('button__icon');
-    icon.innerText = button.icon;
     container.appendChild(icon);
 
     var text = document.createElement('span');
@@ -52,6 +53,16 @@ function create_button(button) {
     text.innerText = button.name;
     container.appendChild(text);
 
+    container.classList.add('button__container');
+    container.classList.add(button.color)
+
+    container.setAttribute('data-id', button.id);
+    container.setAttribute('data-gain', button.gain);
+    container.setAttribute('href', '#!');
+    // container.setAttribute('onclick', "console.log('hei')");
+    container.id = button.id;
+
+    container.addEventListener("click", button_click, false);
 
     return container;
 }
