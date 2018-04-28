@@ -13,7 +13,7 @@ request.open('get', '/js/templates/example_level.json', true)
 request.onreadystatechange = function () {
     if (request.readyState === 4 && request.status == "200") {
         var level = JSON.parse(request.responseText);
-        console.log(level);
+        // console.log(level);
         render_level(level)
     }
 }
