@@ -77,8 +77,10 @@ module.exports = function (grunt) {
           "js/partial/level_check.js",
           'js/partial/event_handlers.js',
           'js/partial/render_level.js',
+          'js/partial/core_game_logic.js',
           "js/main.js",
-          "js/plugins.js"
+          "js/plugins.js",
+          "js/partial/achievements.js"
         ],
         // the location of the resulting JS file
         dest: 'js/site.js'
@@ -96,8 +98,10 @@ module.exports = function (grunt) {
           "js/partial/level_check.js",
           'js/partial/event_handlers.js',
           'js/partial/render_level.js',
+          'js/partial/core_game_logic.js',
           "js/main.js",
-          "js/plugins.js"
+          "js/plugins.js",
+          "js/partial/achievements.js"
         ],
         // the location of the resulting JS file
         dest: 'js/site.js'
