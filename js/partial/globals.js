@@ -5,11 +5,16 @@ var css_colors = ['black', 'white', 'red', 'green', 'blue', 'yellow'];
 // Icons https://pastebin.com/Y7NkTLuV 
 // Icons
 
+//button clicked timeout (spam click fix)
+var Button_clicked_timeout;
+
 // Core Game Logic Interval
 var Cgl_interval;
 
 // Current Loaded Level
 var Level;
+
+
 
 // Player
 var Player = {
