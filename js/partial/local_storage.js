@@ -7,7 +7,7 @@ function save_game(){
 function load_game(){
     var player = load_player();
     var level = load_level();
-    if (level_check(level) && player){
+    if (check_level(level) && player){
         render_level(level);
         Player = player;
         return true;
