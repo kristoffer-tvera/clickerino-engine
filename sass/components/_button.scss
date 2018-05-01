@@ -1,0 +1,52 @@
+.button {
+    &__container {
+        display: flex;
+        justify-content: space-between;
+        margin: 5px;
+        padding: 10px 20px;
+        border: 1px solid $black;
+        border-radius: 10px;
+        background-color: #fff;
+
+        &.red {
+            background-color: red;
+            color: white;
+        }
+
+        &.yellow {
+            background-color: yellow;
+            color: white;
+        }
+
+        &.blue {
+            background-color: blue;
+            color: white;
+        }
+
+        &.green {
+            background-color: green;
+            color: white;
+        }
+        
+        &.black {
+            background-color: black;
+            color: white;
+        }
+
+        &.white {
+            background-color: white;
+            color: black;
+        }
+    }
+
+    &__icon {
+
+    }
+
+    &__text {
+
+    }
+
+    
+
+}
