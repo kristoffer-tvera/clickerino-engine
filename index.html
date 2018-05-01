@@ -64,8 +64,18 @@
     <div id="level-container" class="container">
         <div class="row main-stage__hero">
             <div class="col s12 l6 main-stage__left">
-                Klokka vår
-                <div class="clock__spinner--2"></div>
+                <div class="row">
+                    <div class="col s6">Score
+                        <span id="score" class="main-stage__score--counter">0</span>
+                    </div>
+                    <div class="col s6">Score per tick
+                        <span id="score-per-tick" class="main-stage__score--counter">0</span>
+                    </div>
+                </div>
+                <!-- <div class="clock__spinner--2"></div> -->
+                <div class="progress">
+                    <div class="indeterminate"></div>
+                </div>
             </div>
             <div class="col s12 l6 main-stage__right">
                 <div class="button-list__container">
