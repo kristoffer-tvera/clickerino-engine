@@ -81,7 +81,8 @@ module.exports = function (grunt) {
           "js/main.js",
           "js/plugins.js",
           "js/partial/achievements.js",
-          "js/partial/local_storage.js"
+          "js/partial/local_storage.js",
+          "js/partial/player_check.js"
         ],
         // the location of the resulting JS file
         dest: 'js/site.js'
@@ -103,7 +104,8 @@ module.exports = function (grunt) {
           "js/main.js",
           "js/plugins.js",
           "js/partial/achievements.js",
-          "js/partial/local_storage.js"
+          "js/partial/local_storage.js",
+          "js/partial/player_check.js"
         ],
         // the location of the resulting JS file
         dest: 'js/site.js'
