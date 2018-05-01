@@ -149,8 +149,9 @@ function check_color_css(color) {
 
 // Percentage checker, needs testing
 function check_percentage(number) {
-    var regExTest = /^\d[\d]*%$/i.test(number);
-    if (!regExTest) {
+    //var regExTest = /^\d[\d]*%$/i.test(number);
+    var regExNumber = /\d+/i.test(number);
+    if (!regExNumber) {
         console.log("Fix input");
         return false;
     }
