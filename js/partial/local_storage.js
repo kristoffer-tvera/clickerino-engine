@@ -5,8 +5,12 @@ function save_game(){
 }
 
 function load_game(){
-    load_player();
-    load_level();
+    var player = load_player();
+    var level = load_level();
+    if (level_check(level) && player){
+        render_level(level);
+        Player = player;
+    }
 }
 
 function save_player() {
@@ -16,7 +20,7 @@ function save_player() {
 function load_player(name){
     var fromLocalStorage = load_from_localstorage("player");
     if (fromLocalStorage){
-        Player = fromLocalStorage;
+        return fromLocalStorage;
     }
 }
 
@@ -27,7 +31,7 @@ function save_level(){
 function load_level(){
     var fromLocalStorage = load_from_localstorage("level");
     if (fromLocalStorage){
-        Level = fromLocalStorage;
+        return fromLocalStorage;
     }
 }
 
