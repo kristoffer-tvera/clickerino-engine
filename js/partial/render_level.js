@@ -1,3 +1,12 @@
+function display_update_score(score) {
+    var formatted = Number.parseFloat(score).toFixed(2);
+    document.getElementById('score').innerText = formatted;
+}
+
+function display_update_score_per_tick(score) {
+    var formatted = Number.parseFloat(score).toFixed(2);
+    document.getElementById('score-per-tick').innerText = formatted;
+}
 
 function render_level(level) {
     set_background_color(level.background_color);
@@ -48,10 +57,21 @@ function create_button(button) {
     icon.classList.add('button__icon');
     container.appendChild(icon);
 
-    var text = document.createElement('span');
-    text.classList.add('button__text');
-    text.innerText = button.name;
-    container.appendChild(text);
+    var text_cost = document.createElement('span');
+    text_cost.classList.add('button__text');
+    text_cost.classList.add('button__text--cost');
+    text_cost.innerText = button.cost;
+    container.appendChild(text_cost);
+
+    var text_gain = document.createElement('span');
+    text_gain.classList.add('button__text');
+    text_gain.innerText = button.gain;
+    container.appendChild(text_gain);
+
+    var text_name = document.createElement('span');
+    text_name.classList.add('button__text');
+    text_name.innerText = button.name;
+    container.appendChild(text_name);
 
     container.classList.add('button__container');
     container.classList.add(button.color)
