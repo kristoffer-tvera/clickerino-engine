@@ -15,6 +15,7 @@ request.onreadystatechange = function () {
         var level = JSON.parse(request.responseText);
         // console.log(level);
         render_level(level)
+        init_game()
     }
 }
 request.send();
