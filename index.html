@@ -64,7 +64,18 @@
     <div id="level-container" class="container">
         <div class="row main-stage__hero">
             <div class="col s12 l6 main-stage__left">
-                Klokka vår
+                <div class="row">
+                    <div class="col s6">Score
+                        <span id="score" class="main-stage__score--counter">0</span>
+                    </div>
+                    <div class="col s6">Score per tick
+                        <span id="score-per-tick" class="main-stage__score--counter">0</span>
+                    </div>
+                </div>
+                <!-- <div class="clock__spinner--2"></div> -->
+                <div class="progress">
+                    <div class="indeterminate"></div>
+                </div>
             </div>
             <div class="col s12 l6 main-stage__right">
                 <div class="button-list__container">
@@ -76,23 +87,23 @@
 
         </div>
     </div>
-    
+
     <button id="snackbar" class="snackbar">Placeholder Stuff</button>
 
     <div id="simpleModal" class="modal">
-      <div class="modal-content">
-        <div class="modal-header">
-            <span class="modal-closeBtn">&times;</span>
-            <h2>Modal Header</h2>
+        <div class="modal-content">
+            <div class="modal-header">
+                <span class="modal-closeBtn">&times;</span>
+                <h2>Modal Header</h2>
+            </div>
+            <div class="modal-body">
+                <p>Hello...I am a modal</p>
+                <p>This is a placeholder... I'm blue dabe dia be dai</p>
+            </div>
+            <div class="modal-footer">
+                <h3>Modal Footer</h3>
+            </div>
         </div>
-        <div class="modal-body">
-          <p>Hello...I am a modal</p>
-          <p>This is a placeholder... I'm blue dabe dia be dai</p>
-        </div>
-        <div class="modal-footer">
-          <h3>Modal Footer</h3>
-        </div>
-      </div>
     </div>
 
     <!-- <textarea name="debug" id="levelDropZone" cols="30" rows="60" style="height:20rem"></textarea>
