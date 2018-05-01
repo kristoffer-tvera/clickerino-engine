@@ -10,7 +10,9 @@ function load_game(){
     if (level_check(level) && player){
         render_level(level);
         Player = player;
+        return true;
     }
+    return false;
 }
 
 function save_player() {
