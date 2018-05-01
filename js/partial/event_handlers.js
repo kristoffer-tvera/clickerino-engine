@@ -1,5 +1,8 @@
 function button_click(event) {
     var button = event.target;
+    while (button.tagName != 'A') {
+        button = button.parentElement;
+    }
     button.classList.add('disabled');
 
     Button_clicked_timeout = setTimeout(function () {
@@ -8,7 +11,11 @@ function button_click(event) {
         var id = button.getAttribute('data-id');
         var cost_increase = button.getAttribute("data-cost-increase");
 
-        player_modify_score(-cost);
+        if (!player_modify_score(-cost)) { //False means there was insufficient funds.
+            button.classList.remove('disabled');
+            return;
+        }
+
         player_modify_score_per_tick(gain);
 
         var new_cost = cost * ((cost_increase / 100) + 1);
