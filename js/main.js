@@ -16,6 +16,7 @@ request.onreadystatechange = function () {
         Level = level;
         // console.log(level);
         render_level(level)
+        init_game()
     }
 }
 request.send();

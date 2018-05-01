@@ -1,17 +1,34 @@
 function button_click(event) {
     var button = event.target;
     button.classList.add('disabled');
-    var cost = button.getAttribute("data-cost");
-    var gain = button.getAttribute("data-gain");
-    var cost_increase = button.getAttribute("data-cost-increase");
 
+    Button_clicked_timeout = setTimeout(function () {
+        var cost = button.getAttribute("data-cost");
+        var gain = button.getAttribute("data-gain");
+        var id = button.getAttribute('data-id');
+        var cost_increase = button.getAttribute("data-cost-increase");
 
+        player_modify_score(-cost);
+        player_modify_score_per_tick(gain);
+
+        var new_cost = cost * ((cost_increase / 100) + 1);
+        button.setAttribute('data-cost', new_cost);
+
+        var cost_text = button.querySelector('.button__text--cost');
+        if (cost_text) {
+            var formatted = Number.parseFloat(new_cost).toFixed(2);
+            // var formatted = Number.parseFloat(new_cost).toPrecision(2);
+
+            cost_text.innerText = formatted;
+        }
+
+        add_new_inventory(id);
+
+        button.classList.remove('disabled');
+    }, 0);
 
     // if (can_afford(cost)) {
-
     // }
-
-    button.classList.remove('disabled');
 
     // var id = 0;
     // var score_per_second_gain;
