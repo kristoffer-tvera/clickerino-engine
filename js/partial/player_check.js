@@ -20,7 +20,7 @@ function player_check(player) {
         return false;
     }
     
-    if (!player.hasOwnProperty(player.score_per_tick)){
+    if (!player.hasOwnProperty("score_per_tick")){
         console.log("Assign a score per tick value");
         return false;
     }

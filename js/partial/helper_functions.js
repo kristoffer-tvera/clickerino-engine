@@ -25,7 +25,7 @@ function check_name(name) {
 
 
 function check_gt_zero(number) {
-    if (!number >= 0) {
+    if (number < 0) {
         console.log("greater than zero");
         return false;
     }
