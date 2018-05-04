@@ -30,6 +30,40 @@
             "score": "10",
             "unlocked_on": "10",
             "flavour_text": "You have started on your journey to a better self. Make a first step was taken this way."
+        },
+
+        {
+            "name": "Wheelchair Enthusiast",
+            "icon": "e123",
+            "score": "20",
+            "unlocked_on": "15",
+            "flavour_text": "You have more wheelchairs than you have functioning legs."
+        },
+
+        {
+            "name": "Blue Man Group",
+            "icon": "e707",
+            "score": "50",
+            "unlocked_on": "30",
+            "flavour_text": "You found the blue man"
+        },
+
+        {
+            "name": "King Amario",
+            "icon": "e666",
+            "score": "50",
+            "unlocked_on": "30",
+            "flavour_text": "You met the coolest king, Amario."
+        },
+
+        {
+            "name": "OMG, you killed Trym!",
+            "icon": "e001",
+            "score": "10",
+            "unlocked_on": "10",
+            "flavour_text": "You killed the pleb king, Trym"
         }
+
+        
     ]
 }
