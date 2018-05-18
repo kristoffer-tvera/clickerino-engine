@@ -74,6 +74,7 @@ module.exports = function (grunt) {
         // the files to concatenate
         src: [
           "js/partial/globals.js",
+          "js/partial/loading.js",
           "js/partial/level_check.js",
           'js/partial/event_handlers.js',
           'js/partial/render_level.js',
@@ -98,6 +99,7 @@ module.exports = function (grunt) {
         },
         src: [
           "js/partial/globals.js",
+          "js/partial/loading.js",
           "js/partial/level_check.js",
           'js/partial/event_handlers.js',
           'js/partial/render_level.js',
