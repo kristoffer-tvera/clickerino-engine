@@ -44,14 +44,14 @@ function player_check(player) {
     }
 
     for (var index = 0; index < player.inventory.length; index++) {
-        if (!player_check(player.inventory[index])) {
+        if (!check_inventory(player.inventory[index])) {
             console.log("Not an actual inventory item");
             return false;
         }
     }
     return true;
 }
-player_check(Player);
+
 
 function check_inventory(inventory) {
 
