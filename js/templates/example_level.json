@@ -6,7 +6,7 @@
             "id": "0",
             "name": "Mow the lawn",
             "color": "black",
-            "icon": "e637",
+            "icon": "e636",
             "cost": "2",
             "cost_increase": "50",
             "gain": "0.1",
@@ -20,7 +20,17 @@
             "cost": "10",
             "cost_increase": "50",
             "gain": "1",
-            "unlocked_on": "8"
+            "unlocked_on": "2"
+        },
+        {
+            "id": "2",
+            "name": "Clean shoes",
+            "color": "blue",
+            "icon": "e638",
+            "cost": "1000",
+            "cost_increase": "50",
+            "gain": "15",
+            "unlocked_on": "3"
         }
     ],
     "achievements": [
