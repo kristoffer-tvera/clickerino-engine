@@ -10,6 +10,10 @@ var Button_clicked_timeout;
 
 // Core Game Logic Interval
 var Cgl_interval;
+var Cgl_interval_time = 1000;
+
+var Save_interval;
+var Save_interval_time = 1000 * 60;
 
 // Current Loaded Level
 var Level;

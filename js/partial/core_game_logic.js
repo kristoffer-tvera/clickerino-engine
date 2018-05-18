@@ -1,11 +1,13 @@
 function init_game() {
     display_update_score(Player.score);
     display_update_score_per_tick(Player.score_per_tick)
-    Cgl_interval = setInterval(iteration, 1000);
+    Cgl_interval = setInterval(iteration, Cgl_interval_time);
+    Save_interval = setInterval(save_game, Save_interval_time);
 }
 
 function destroy_game() {
     clearInterval(Cgl_interval);
+    clearInterval(Save_interval);
     wipe_level();
 }
 
@@ -44,11 +46,26 @@ function add_new_inventory(inventory_item) {
 
 
 function player_modify_score(score) {
-    Player.score += Number.parseFloat(score); //TODO: Fiks at denne sjekker om du har "lov" først.
-    display_update_score(Player.score);
+    score = Number.parseFloat(score);
+
+    if (Player.score + score < 0) {
+        return false;
+    }
+
+    var sum = Player.score + score;
+    var formatted = Number.parseFloat(sum.toFixed(3));
+
+    Player.score = formatted;
+    display_update_score(formatted);
+
+    return true;
 }
 
 function player_modify_score_per_tick(score) {
-    Player.score_per_tick += Number.parseFloat(score);
-    display_update_score_per_tick(Player.score_per_tick);
+    score = Number.parseFloat(score);
+
+    var sum = Player.score_per_tick + score;
+    var formatted = Number.parseFloat(sum.toFixed(3));
+    Player.score_per_tick = formatted
+    display_update_score_per_tick(formatted);
 }
