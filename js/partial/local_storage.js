@@ -8,9 +8,9 @@ function load_game(){
     var player = load_player();
     var level = load_level();
     if (check_level(level) && player_check(player)){
-        render_level(level);
         Player = player;
         Level = level;
+        render_level(level, player);
         return true;
     } else if(check_level(Level)){
         Level = level;
