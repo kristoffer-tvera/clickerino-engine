@@ -31,6 +31,7 @@ function load_fallback_json() {
     if (request.readyState === 4 && request.status == "200") {
         var level = JSON.parse(request.responseText);
         Level = level;
+        Player = defaultNewplayer();
         render_level(level)
     }
 }
