@@ -7,9 +7,15 @@ function save_game(){
 function load_game(){
     var player = load_player();
     var level = load_level();
-    if (check_level(level) && player){
-        render_level(level);
+    if (check_level(level) && player_check(player)){
         Player = player;
+        Level = level;
+        render_level(level, player);
+        return true;
+    } else if(check_level(Level)){
+        Level = level;
+        Player = defaultNewPlayer();
+        render_level(level);
         return true;
     }
     return false;
@@ -38,7 +44,10 @@ function load_level(){
 }
 
 function load_from_localstorage(keyName){
-    return JSON.parse(localStorage.getItem(keyName));
+    var itemFromLocalStorage = localStorage.getItem(keyName);
+   if (itemFromLocalStorage){
+       return JSON.parse(localStorage.getItem(keyName));
+   }
 }
 
 

@@ -11,18 +11,50 @@ function destroy_game() {
     wipe_level();
 }
 
+/*
+Runs every tick
+*/
 function iteration() {
-    console.log(Player);
+    console.log('ping');
+    player_modify_score(Player.score_per_tick);
 
-    // var score_per_tick = Player.score_per_tick;
-    // var score_before = Player.score;
-    // var score_after = score_before + score_per_tick;
+    update_affordable_buttons(Player.score);
+    update_displayed_buttons(Player.score_per_tick);
+}
 
-    // display_update_score(score_after);
-    // display_update_score_per_tick(score_per_tick);
+function update_affordable_buttons(score) {
+    var buttons = document.querySelectorAll('a.button__container');
+    if (buttons) {
+        for (var j = 0; j < buttons.length; j++) {
+            if (buttons[j].hasAttribute('data-cost')) {
+                var cost = buttons[j].getAttribute('data-cost');
+                cost = parseInt(cost);
+                if (cost > score) {
+                    buttons[j].classList.add('disabled');
+                } else {
+                    buttons[j].classList.remove('disabled');
+                }
+            }
+        }
+    }
+}
 
-    // Player.score = score_after;
-    player_modify_score(Player.score_per_tick)
+function update_displayed_buttons(score_per_tick) {
+    var buttons = document.querySelectorAll('a.button__container');
+    if (buttons) {
+        for (var j = 0; j < buttons.length; j++) {
+            if (buttons[j].hasAttribute('data-unlock-on')) {
+
+                var unlock_on = buttons[j].getAttribute('data-unlock-on');
+                unlock_on = parseInt(unlock_on);
+                if (unlock_on > score_per_tick) {
+                    buttons[j].style.display = 'none';
+                } else {
+                    buttons[j].style.display = 'flex';
+                }
+            }
+        }
+    }
 }
 
 function update_score_per_second(score) {

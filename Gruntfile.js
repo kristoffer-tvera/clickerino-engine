@@ -74,6 +74,7 @@ module.exports = function (grunt) {
         // the files to concatenate
         src: [
           "js/partial/globals.js",
+          "js/partial/loading.js",
           "js/partial/level_check.js",
           'js/partial/event_handlers.js',
           'js/partial/render_level.js',
@@ -81,7 +82,9 @@ module.exports = function (grunt) {
           "js/main.js",
           "js/plugins.js",
           "js/partial/achievements.js",
-          "js/partial/local_storage.js"
+          "js/partial/helper_functions.js",
+          "js/partial/local_storage.js",
+          "js/partial/player_check.js"
         ],
         // the location of the resulting JS file
         dest: 'js/site.js'
@@ -96,6 +99,7 @@ module.exports = function (grunt) {
         },
         src: [
           "js/partial/globals.js",
+          "js/partial/loading.js",
           "js/partial/level_check.js",
           'js/partial/event_handlers.js',
           'js/partial/render_level.js',
@@ -103,7 +107,9 @@ module.exports = function (grunt) {
           "js/main.js",
           "js/plugins.js",
           "js/partial/achievements.js",
-          "js/partial/local_storage.js"
+          "js/partial/helper_functions.js",
+          "js/partial/local_storage.js",
+          "js/partial/player_check.js"
         ],
         // the location of the resulting JS file
         dest: 'js/site.js'
